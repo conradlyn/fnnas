@@ -304,7 +304,7 @@ jobs:
           df -Th
           echo "status=success" >> ${GITHUB_OUTPUT}
 
-      - name: Download fnnas image file
+      - name: Download fnnas image [ ${{ inputs.fnnas_base_version }} ]
         id: down
         working-directory: /builder
         if: (!cancelled())

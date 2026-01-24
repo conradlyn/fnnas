@@ -111,7 +111,7 @@ jobs:
           df -Th
           echo "status=success" >> ${GITHUB_OUTPUT}
 
-      - name: Download latest fnnas image
+      - name: Download fnnas image [ ${{ inputs.fnnas_base_version }} ]
         id: down
         working-directory: /builder
         if: (!cancelled())
@@ -158,7 +158,7 @@ jobs:
 
           echo "status=success" >> ${GITHUB_OUTPUT}
 
-      - name: Compile the fnnas kernel [ ${{ inputs.fnnas_base_version }} ]
+      - name: Compile the fnnas kernel
         uses: ophub/fnnas@main
         if: ${{ steps.down.outputs.status == 'success' && !cancelled() }}
         with:
