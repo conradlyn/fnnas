@@ -79,7 +79,7 @@ jobs:
       
     strategy:
       matrix: ${{ fromJson(needs.set-matrix.outputs.matrix) }}
-    name: build-kernel-${{ matrix.dtbs_version }}@${{ matrix.fnnas_base_version }}
+    name: build-kernel:${{ matrix.dtbs_version }}@${{ matrix.fnnas_base_version }}
 
     steps:
       - name: Checkout
